@@ -1,3 +1,3 @@
 # Soh-para-louco!
 
-repositorio para por um monte de arquivos etc 
+repositorio com o intuito de compartilhar codigo e aprender linguagens de programação em grupo!
