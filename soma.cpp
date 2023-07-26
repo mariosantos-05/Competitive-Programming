@@ -1,6 +1,6 @@
 //tentando somar 2 inteiros 
 
-/*primeiro é necessario entender os tipo de entradas disponiveis, para esse codigo em especefico vou usar "int"*/
+/*primeiro é necessario entender os tipo de entradas disponiveis, para esse codigo em especifico vou usar "int"*/
 #include <iostream>
 
 int main() {
