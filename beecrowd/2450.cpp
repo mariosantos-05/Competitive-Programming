@@ -55,8 +55,10 @@ int main(){
     //quantidades de zeros até elemento x. se for maior ou igual é "escada matrix". se a quantidade diminuir automaticamente não é
     int ref = 0;
     bool valor, ok = true;
+    int contador = 0;
     for(int i = 0; i < n; i++){
         int zeros = 0;
+        int contador_ref = 0;
         for(int j = 0; j < m; j++){
             if(array[i][j] == 0)
             {
@@ -70,18 +72,40 @@ int main(){
             else
             {
                 valor = false;
+                contador_ref += 1;
             }
         }
+
+        if(i != 0)
+        {
+            if(zeros >= ref && zeros == m && ok == true )
+            {
+                ref = zeros;
+            }
+            else
+            {
+                ref = 0;
+                ok = false;
+            }
+        }
+        else
+        {
+            ref = zeros;
+        }
+
+
+        /*contador = contador_ref;
 
         //cout << zeros << "\n";
         //cout << ref << "\n";
         //if (i == (n-1) && zeros == n && ok == false){
         //cout << "zeros_1: " << zeros << "\n";
         //cout << ok << "\n";
-        if (i == (n-1) && ok == false && zeros == n)
+        cout << "contador" << contador << "\n";
+        if (i == (n-1) && ok == false && zeros == m && contador == 1)
         {    
-            /*cout << "zeros: " << zeros << "\n";
-            cout << "valor verdade" << "\n";*/
+            //cout << "zeros: " << zeros << "\n";
+            //cout << "valor verdade" << "\n";
             cout << "N" << "\n";
             return 0;        
         }
@@ -100,9 +124,16 @@ int main(){
                 cout << "N" << "\n";
                 return 0;
             }
-        }    
+        }    */
     }
 
-    cout << "S" << "\n";
+    cout << "ref: "<< ref << "\n";
+    if(ref == 0){
+        cout << "S" << "\n";
+    }
+    else{
+        cout << "N" << "\n";
+    }
+
     return 0;
 }
