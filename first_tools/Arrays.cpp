@@ -40,7 +40,7 @@ int main(){
     //é possivel adcionar dimensões infinitamente as Arrays, apenas modificando os colchetes
     
     //para acessar os elementos nas arrays é só usar o ordenamento de indices
-    cout <<"o elemento na posição A11 da matriz é: " <<  letras[0][0] << "\n";
+    cout <<"o elemento na posição a11 da matriz é: " <<  letras[0][0] << "\n";
 
     return 0; 
 
