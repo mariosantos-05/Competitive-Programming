@@ -3,38 +3,34 @@
 using namespace std;
 
 int solve(string x){
-    map<string, int> dic;
-    string aux;
-    for(int i = 0; i < sizeof(x); i++){
-        cout << x[i] << "\n";
+    vector<string> num;
+    for(int i = 0; i < 4; i++){
+        string aux;
         aux = x[i];
-        if (dic.find(aux) == dic.end()){
-            dic[aux] = 1;
-        }
-        else{
-            return false;
-        }
+        num.push_back(aux);
     }
-    return true;
+    sort(num.begin(), num.end());
+    auto it = unique(num.begin(), num.end());
+    num.resize(distance(num.begin(), it));
+
+    if( num.size() != 4)
+        return 0;
+    else
+        return 1;
 
 }
 
 int main(){
     int n;
     cin >> n;
-    
     n++;
     string m = to_string(n);
-    
-    cout << solve(m) << "\n";
 
-
-    /*while (solve(m) != true){
+    while (solve(m) != true){
         n = stoi(m);
         n++;
         m = to_string(n);
-        cout << "n " << n << "m " << m;
     }
-    cout << n << "\n";*/
+    cout << n << "\n";
     return 0;
 }

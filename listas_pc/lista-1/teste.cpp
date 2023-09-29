@@ -1,15 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){   
-    string a;
-    cin >> a;
-    string arr[4] = {};
-    for(int i = 1; i <= 4; i++){
-        arr[i] = a[i];
+
+template<typename T>
+bool allEqual(vector<T> const &v) {
+    return adjacent_find(v.begin(), v.end(), not_equal_to<T>()) == v.end();
+}
+
+
+int solve(){
+    int i, n,aux,days;
+    vector<int> a;
+    cin >> n;
+
+    sort(a.begin(), a.end());
+
+    if (n <= 0)
+        return 0;
+
+    for(i = 0; i < n; i++){
+        cin >> aux;
+        a.push_back(aux);
     }
-    size_t len = sizeof(arr)/sizeof(arr[0]);
-    sort(arr, arr + len);
-    bool result = distance(arr, unique(arr, arr + len)) == len;
-    return 0;
+
+    if(allEqual(a) == true and a[0] == 0)
+        return 0;
+
+    days = 1;
+    for(auto elem: a){
+        if (elem >= days+1){
+            days++;
+        }
+    }
+    return days;    
 }

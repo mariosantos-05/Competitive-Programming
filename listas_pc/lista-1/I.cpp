@@ -10,36 +10,24 @@ bool sortbysec(const pair<int,int> &a,const pair<int,int> &b)
 int main(){
     //declarando tipos
     int n, m, i, j, aux2, c;
-    int binaria[n][m];
     vector< pair<int, int> > on;
-    vector<int> numb;
     string nums, aux;
 
     //tamanho da matriz
     cin >> n >> m;
 
-    //separando os elementos da matriz
-    for(i = 0; i < n; i++){
-        cin >> nums;
-        for(j = 0; j < nums.size(); j++){
-            aux = nums[j];
-            aux2 = stoi(aux);
-            numb.push_back(aux2); 
-        }
-    }
-
     //pegando os elementos da matriz
     for(i = 0; i < n; i++){
+        cin >> nums;
         for(j = 0; j < m; j++){
-            binaria[i][j] = numb[c];
-            c++;
-            if (binaria[i][j] == 1){
+            aux = nums[j];
+            aux2 = stoi(aux);
+            if (aux2 == 1){
                 on.push_back(make_pair(i,j));
             }
-            
         }
     }
-    //condição especial para caso não tenha nada na matriz
+    //Done
     if (on.empty()){
         cout << "0x0" << "\n";
     }
