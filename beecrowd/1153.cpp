@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int fatorial(int x){
-    if (x > 1){
-        return x*(fatorial(x-1));
-    }
-    else{
-        return 1;
-    }
+int fatorial(int n){
+    int fact = 1, i;
+    for(i=1; i<=n; i++)
+    fact = fact * i;
+    return 0;
 }
 
 int main(){

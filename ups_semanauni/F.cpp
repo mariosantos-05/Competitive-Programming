@@ -9,6 +9,6 @@ int main(){
     getline(cin, n);
     getline(cin, n);
     cout << "Eu sacudi, sacudi, sacudi." << "\n";
-    cout << "Mas a formguinha nao parava de subir!" << "\n";    
+    cout << "Mas a formiguinha nao parava de subir!" << "\n";    
     return 0;
 }
