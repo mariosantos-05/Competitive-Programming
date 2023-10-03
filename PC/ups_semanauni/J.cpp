@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 const int MAX = 1e3 + 5;
 int dp[MAX][MAX];
-string s;
+
 
 int solve(int esq, int dir){
     if(esq == dir) return 0;
@@ -20,6 +20,7 @@ int solve(int esq, int dir){
 }
 
 void task(){
+    string s;
     memset(dp, -1, sizeof dp);
     cin >> s;
     printf("%d\n", solve(0, s.size()-1));
