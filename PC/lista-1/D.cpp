@@ -5,7 +5,6 @@ using namespace std;
 
 int main(){
     int n, i; 
-
     vector<string> name;
     vector<string> init;
     vector<int> final;

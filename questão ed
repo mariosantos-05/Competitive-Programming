@@ -1,0 +1,5 @@
+Joao esta trabalhando em uma mina de diamantes "<>" tentando retirar o maximo que consegue de diamantes ele deve exluit todas as particulas de areia "." do processo e a cada retirada de diamante, novos diamentes poderão se formar; se ele tem commo uma entrada .<..<..<>>....>...>>>.; três diamantes são formados. O primerio é retirado de <..>; resultadndo .<..<>...>...>>>; Em seguida o segundo diamente é retirado, restando .<......>....>>>; O terceiro diamente é então retirado resultando no final ....>>>..; sem possibilidade de extração de novo diamante. Implemente um método que recebe como parametro uma string com particulas de diamantes e de arreia e retorna a quantidade de diamantes spossiveis de serem extraídos. Pode usar qualquer TAD estudado(pilha,fila,listas,deques).
+
+
+def minerar(entrada):
+	IMPLEMENTAR
