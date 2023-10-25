@@ -14,23 +14,32 @@ void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
 
+
+void solve(){
+    int n, aux, pos;
+    //tentar refazer utilizando pair ou map;
+    vector<int> v1;
+    vector<int> v2;
+    cin >> n;
+    for(int i = 0; i < n; i++) {
+        cin >> aux;
+        v1.push_back(aux);
+        v2.push_back(aux);
+    }
+    sort(v2.begin(), v2.end());
+    for (int i = 0; i < n; i++) {
+        pos = lower_bound(v2.begin(), v2.end(), v1[i]) - v2.begin();
+        cout << pos+1 << ' ';
+    }
+    cout << "\n";
+}
+
+
 int main(){
     desync;
-    int n,ref,acertos;
-    double nota;
-    string a, b;
-    cin >> n;
-    ref = n;
-    acertos = 0;
-    while(n--){
-        cin >> a >> b;
-        if (a == b){
-            acertos++;
-        }
-    }
-    nota = 10*(1.0*acertos)/ref;
-    cout << fixed;
-    cout << "Nota: "<< setprecision(2) << abs(nota) << "\n";
-
+    solve();
     return 0;
 }
+
+
+

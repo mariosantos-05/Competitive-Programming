@@ -17,10 +17,10 @@ int solve(string x){
         return 0;
     else
         return 1;
-
 }
 
 int main(){
+    desync;
     int n;
     cin >> n;
     n++;
@@ -34,3 +34,4 @@ int main(){
     cout << n << "\n";
     return 0;
 }
+

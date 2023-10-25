@@ -4,6 +4,7 @@ using namespace std;
 
 #define ll long long
 #define pii pair<int, int>
+#define pci pair<char, int>
 #define pll pair<long long, long long>
 #define vi vector<int>
 #define vll vector<long long>
@@ -14,23 +15,24 @@ void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
 
+
+void solve(){
+    int n, w;
+    char c;
+    stack<pii> s;
+    s.push(make_pair(0,0));
+    
+    cin >> n;
+    for(int i = 0; i < n; i++){
+        cin >> c >> w;
+        if (c == 'A'){s.push(make_pair(w, max(w,s.top().second)));}
+        else if(c == 'V'){cout << s.top().second << "\n";}
+        else{s.pop();}
+    } 
+}
+
 int main(){
     desync;
-    int n,ref,acertos;
-    double nota;
-    string a, b;
-    cin >> n;
-    ref = n;
-    acertos = 0;
-    while(n--){
-        cin >> a >> b;
-        if (a == b){
-            acertos++;
-        }
-    }
-    nota = 10*(1.0*acertos)/ref;
-    cout << fixed;
-    cout << "Nota: "<< setprecision(2) << abs(nota) << "\n";
-
+    solve();
     return 0;
 }

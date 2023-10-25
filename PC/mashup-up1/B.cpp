@@ -14,23 +14,21 @@ void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
 
+
+void solve(){
+    int n, s;
+    cin >> n >> s;
+
+    int contador  = s/n;
+    int res  = s%n;
+    if(res != 0 and res <= n) contador++;
+
+    cout << contador << "\n";
+}
+
+
 int main(){
     desync;
-    int n,ref,acertos;
-    double nota;
-    string a, b;
-    cin >> n;
-    ref = n;
-    acertos = 0;
-    while(n--){
-        cin >> a >> b;
-        if (a == b){
-            acertos++;
-        }
-    }
-    nota = 10*(1.0*acertos)/ref;
-    cout << fixed;
-    cout << "Nota: "<< setprecision(2) << abs(nota) << "\n";
-
+    solve();
     return 0;
 }

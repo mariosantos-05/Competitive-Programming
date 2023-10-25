@@ -1,0 +1,13 @@
+Problema: como obter o valor máximo de uma pilha.
+
+ler n números inteiros e armazená-los em uma pilha. Em seguida, tem-se Q consultas:
+
+tipo 1: apresentar o maior número armazenado na pilha. 
+tipo 2: empilhar um novo número
+tipo 3: desempilhar
+
+Exemplo de entrada:
+n = 6
+números : 1, 7 , 3, -1, 8, 5.
+
+(Last in First out) LIFO

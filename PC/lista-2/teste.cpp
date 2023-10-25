@@ -16,21 +16,8 @@ ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
 
 int main(){
     desync;
-    int n,ref,acertos;
-    double nota;
-    string a, b;
-    cin >> n;
-    ref = n;
-    acertos = 0;
-    while(n--){
-        cin >> a >> b;
-        if (a == b){
-            acertos++;
-        }
+    int f = 3;
+    for(int i = 0; i < f; i++){
+        cout << "teste" << "\n";
     }
-    nota = 10*(1.0*acertos)/ref;
-    cout << fixed;
-    cout << "Nota: "<< setprecision(2) << abs(nota) << "\n";
-
-    return 0;
 }

@@ -15,22 +15,23 @@ ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
 
 int main(){
-    desync;
-    int n,ref,acertos;
-    double nota;
-    string a, b;
+    int n, q , aux, maior;
+
     cin >> n;
-    ref = n;
-    acertos = 0;
-    while(n--){
-        cin >> a >> b;
-        if (a == b){
-            acertos++;
-        }
+    queue<int> fila(n);
+
+    for(int i = 0; i < n; i++){
+        //cin >> fila(n);
+        cin >> aux;
+        fila.push(aux);
     }
-    nota = 10*(1.0*acertos)/ref;
-    cout << fixed;
-    cout << "Nota: "<< setprecision(2) << abs(nota) << "\n";
+    cout << "Elementos:" << int fila.size() << "\n"
+
+    while(!fila.empty()){
+        int elem = fila.front();
+        fila.pop(); //o(1)
+        cout << elem << "\n"; 
+    }
 
     return 0;
 }
