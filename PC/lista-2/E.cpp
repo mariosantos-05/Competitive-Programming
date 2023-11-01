@@ -39,7 +39,7 @@ int main() {
         long long calc = a + (ans - a + clientes[b][2] - 1) / (clientes[b][1] + clientes[b][2]) * (clientes[b][1] + clientes[b][2]);
         pq.emplace(calc, b);
     }
-                                                //utilizar operador ternario para determinar o incremento
+        //utilizar operador ternario para determinar o incremento
         ans += clientes[pq.top().second][0] + (pq.top().first > ans ? pq.top().first - ans : 0);
 
         pq.pop();

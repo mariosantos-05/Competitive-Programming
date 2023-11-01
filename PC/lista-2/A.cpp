@@ -22,7 +22,7 @@ int main(){
     queue<char> q; 
     for(int i = 0; i < t.size(); i++){
         q.push(t[i]);
-    }
+    }   
     bool valor = false;
     int formigas = 0;
     int contador = 0;
