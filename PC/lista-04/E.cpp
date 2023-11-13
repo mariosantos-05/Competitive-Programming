@@ -17,42 +17,33 @@ ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
 
 
 void solve(){
-    int n,q,aux,l,r,x;
-    ll s;
-    vector<int> v;
-    cin >> n >> q;
-    v.push_back(0); 
+    ll n, q, aux, l, r;
+    cin >> n >> q ;
+    vector<ll> a;
+    a.push_back(0);
     for(int i = 0; i < n; i++){
         cin >> aux;
-        v.push_back(aux);
+        a.push_back(aux);
     }
-    vector<ll> delta(n+2,0);
-    vector<ll> ans(n+2,0);
+    ll maior = *max_element(a.begin(),a.end());
+    //ll pos = distance(a.begin(),max_element(a.begin(),a.end()));
+    ll pos2  = max_element(a.begin(),a.end()) - a.begin();
+    a.erase(a.begin()+pos2);
+    a.insert(a.begin()+((a.size())/2),maior);
+
+    
+    
+    /*vector<ll> psum(n+1,0);
+    for(int i = 1; i <= n; i++){
+        psum[i] = a[i] + psum[i-1];
+    }
+
+    int ans = 0; 
     while(q--){
-        cin >> l >> r >> x;
-        delta[l]+= -x;
-        delta[r+1]-= -x;
-        for(int i = l; i < r+1; i++){
-            ans[i]+= x;
-        }
+        cin >> l >> r;
+        ans += psum[r] - psum[l-1] ;
     }
-    vector<ll> psum(n+1,0);
-    s = 0;
-    for(int i = 1; i <= n; i++){
-        s = s + delta[i];
-        psum[i] = s;
-    }
-    cout << "\n";
-    s = 0;
-    for(int i = 1; i <= n; i++){
-        s = s + delta[i];
-        psum[i] = v[i] + s;
-        //cout << psum[i] << " ";
-    }
-    for(int i = 1; i <= n; i++){
-        cout << ans[i] << "";
-    }
-    cout << "\n";
+    cout << ans << "\n";/*
 
 }
 

@@ -15,29 +15,23 @@ void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
 
-void solve(){
-    //declarando tipos
-    int n, ka, kb, aux;
-    cin >> n >> k1 >> k2;
-    vector<int> A(n);
-    vector<int> B(n);
+/*Operadores bitwise NOT(~)
+Inverte os bits de um número.
 
+Operador AND(&)
+operador binário que realiza a operação entre s bits dos dois números inteiros
 
+Operador OR(|)
+realiza a operação OR-lógica entre os bits (nas suas respectivas posições) de dois números inteiros
 
-    //recebendo as entradas
-    for(int i = 0; i< n; i++){
-        cin >> A[i];
-    }
-    for(int i = 0; i< n; i++){
-        cin >> B[i];
-    }
-
-    
-}
-
+operador XOR(^)
+Realiza a operação XOR-lógico entre os bits (nas suas respectivas posições) de dois números inteiros*/
 
 int main(){
     desync;
-    solve();
+    int i,a,b
+    unsigned int ui;
+    int i = 5
+    int 
     return 0;
 }
