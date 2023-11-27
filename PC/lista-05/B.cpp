@@ -16,15 +16,14 @@ ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
 
 void solve(){
-    string s;
-    int q;
-    cin >> s >> q;
-
-    while(q--){
-            s
+    int n, ans =  0;
+    cin >> n;
+    for(int i = 0; i < n; i++){
+        ans = max(ans, int (n^i));
     }
-    
+    cout << n << " "<< ans - n << "\n"; 
 }
+
 
 
 int main(){

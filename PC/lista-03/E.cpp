@@ -16,44 +16,46 @@ ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
 
 
-int main() {
-    desync; 
-    int N, k1, k2;
-    cin >> N >> k1 >> k2;
+void solve(){
+    //type declaration
+    ll n, k1, k2, ans;
+    cin >> n >> k1 >> k2;
+    vector<int> A(n);
+    vector<int> B(n);
 
-    vector<int> A(N);
-    vector<int> B(N);
-
-    for (int i = 0; i < N; i++) {
+    //getting the inputs
+    for (int i = 0; i < n; i++) {
         cin >> A[i];
     }
 
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < n; i++) {
         cin >> B[i];
     }
-
-    long long initial_error = 0;
-    for (int i = 0; i < N; i++) {
-        initial_error += (A[i] - B[i]) * (A[i] - B[i]);
+    
+    if( *max_element(A.begin(),A.end()) > *max_element(B.begin(),B.end())){
+        int maior_pos = max_element(A.begin(),A.end()) - A.begin();
+        int menor_pos = min_element(B.begin(), B.end()) - B.begin();
+        A[maior_pos] -= k1;
+        B[menor_pos] += k2;
     }
-
-    vector<vector<vector<long long>>> dp(N + 1, vector<vector<long long>>(k1 + 1, vector<long long>(k2 + 1, 0)));
-
-    for (int i = 1; i <= N; i++) {
-        for (int j = 0; j <= k1; j++) {
-            for (int l = 0; l <= k2; l++) {
-                dp[i][j][l] = dp[i - 1][j][l];
-                if (j > 0) {
-                    dp[i][j][l] = max(dp[i][j][l], dp[i - 1][j - 1][l] + (A[i - 1] - B[i - 1]) * (A[i - 1] - B[i - 1]));
-                }
-                if (l > 0) {
-                    dp[i][j][l] = max(dp[i][j][l], dp[i - 1][j][l - 1] + (A[i - 1] - B[i - 1]) * (A[i - 1] - B[i - 1]));
-                }
-            }
-        }
+    else{
+        int maior_pos = max_element(B.begin(),B.end()) - B.begin();
+        int menor_pos = min_element(A.begin(), A.end()) - A.begin();
+        A[menor_pos] += k1;
+        B[maior_pos] -= k2;
     }
+    ans = 0;
+    for(int i = 0; i < n; i++){
+        ans += (abs(A[i] - B[i]))*(abs(A[i] - B[i]));
+    }
+    cout << ans;
+    cout << "\n";
+}
 
-    cout << initial_error - dp[N][k1][k2] << endl;
-
+int main() {
+    desync; 
+    solve();
     return 0;
 }
+
+

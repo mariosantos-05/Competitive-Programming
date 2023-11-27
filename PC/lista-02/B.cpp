@@ -10,8 +10,7 @@ void solve(){
     for(int i = 0; i < n; i++){
         cin >> aux;
         q.push(aux);
-    } 
-
+    }
     int i = 0;
     while(!q.empty()){
         if (i%f != 0){

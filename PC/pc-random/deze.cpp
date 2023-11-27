@@ -15,17 +15,13 @@ void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
 
+
 void solve(){
-    string s;
-    int q;
-    cin >> s >> q;
-
-    while(q--){
-            s
-    }
-    
+    int n;
+    cin >> n;
+    cout << (n%1000 == 0? 20000 - n: 21000 - n) << " " << 20000 - n;
+    cout << "\n";
 }
-
 
 int main(){
     desync;
