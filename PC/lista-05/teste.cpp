@@ -15,24 +15,30 @@ void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
 
-
-void solve(){
-    int c;
-    cin >> c;
-    vector<int> temp;
-    for(int i = 0; i < c; i++){
-        temp.push_back(i);        
+bool div(int n){
+    if(n%3 == 0){
+        return true;
     }
-    sort(temp.rbegin(),temp.rend());
-    for(auto& elem: temp) cout << elem << " ";
-    cout << "\n";
-
+    return false;
 }
 
-int main() {
+void solve(){
+    string n;
+    cin >> n;
+    int ans = 0;
+    bool valor = true;
+    for(int i = 0; i < n.size(); i++){
+        int a = stoi(n,nullptr,i);
+        if((div(a)) == false){
+            valor = false;
+        }   
+    }
+    if (valor == false) cout << "Nao\n";
+    else cout << "Sim\n";
+}
+
+int main(){
     desync;
-    int t;
-    cin >> t;
-    while(t--) solve();
+    solve();
     return 0;
 }

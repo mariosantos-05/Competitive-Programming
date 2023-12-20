@@ -1,0 +1,14 @@
+-Divisão e conquista(dividir para conquistar)
+
+Objetivo: É possivel resolve um problema a partir das resoluções posteriores e uniões dos sub problemas?
+
+
+
+Estrategia composta por três fases:
+
+
+1-Divisão: divide o problema em seus subproblemas até chegar à sua menor representação possivel.
+
+2-Conquista: Pegar os subproblemas, nos menores tamanhos, e solucioná-los.
+
+3-União: Combinar as soluções dos subproblemas para resolver a solução do subproblema maior.

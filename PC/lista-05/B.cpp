@@ -15,19 +15,30 @@ void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
 
-void solve(){
-    int n, ans =  0;
-    cin >> n;
-    for(int i = 0; i < n; i++){
-        ans = max(ans, int (n^i));
+pair<long long, long long> findMaxXORPair(long long n) {
+    // Find the position of the most significant bit in n
+    int msbPosition = 0;
+    long long temp = n;
+    while (temp > 0) {
+        msbPosition++;
+        temp /= 2;
     }
-    cout << n << " "<< ans - n << "\n"; 
+    // Set a and b to have different bits at the most significant position
+    long long a = (1LL << msbPosition) - 1;
+    long long b = n ^ a;
+
+    return make_pair(n, b);
 }
-
-
 
 int main(){
     desync;
-    solve();
+    // User input
+    long long n;
+    cin >> n;
+
+    // Find and output the result
+    pair<long long, long long> result = findMaxXORPair(n);
+    cout << result.first << " " << result.second << endl;
+
     return 0;
 }

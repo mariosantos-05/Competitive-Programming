@@ -9,30 +9,26 @@ using namespace std;
 #define vll vector<long long>
 #define mii map<int, int>
 #define pb push_back
-#define eb emplace_back
 template <class T>
 void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
-ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
-
+ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
 
 void solve(){
-    int c;
-    cin >> c;
-    vector<int> temp;
-    for(int i = 0; i < c; i++){
-        temp.push_back(i);        
+    int n;
+    cin >> n;
+    vector<char> c(n);
+    for(int i = 0; i < n; i++){
+        cin >> c[i];
     }
-    sort(temp.rbegin(),temp.rend());
-    for(auto& elem: temp) cout << elem << " ";
-    cout << "\n";
-
 }
 
-int main() {
+
+
+int main(){
     desync;
     int t;
     cin >> t;
     while(t--) solve();
-    return 0;
+    return 0; 
 }

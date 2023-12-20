@@ -15,25 +15,26 @@ void print_v(vector<T> &v) { for(auto x : v) cout << x << " "; }
 ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
 ll lcm(ll a,ll b) { return a/gcd(a,b)*b;}
 
-int findLargestK(int n) {
-    int k = n;
-    while ((n & k) != 0) {
-        k--;
+
+//I need to study more MSB
+
+void solve(){
+    ll n, ans = 0;
+    cin >> n;
+    while(n != 0){
+        ans++;
+        n = n/2;
     }
-    return k;
+    cout << ((1<<(ans-1))) -1  << "\n";
 }
 
 int main() {
     desync;
-    int t;
+    ll t;
     cin >> t;
 
-    for (int i = 0; i < t; ++i) {
-        int n;
-        cin >> n;
-
-        int result = findLargestK(n);
-        cout << result << endl;
+    while (t--) {
+        solve();
     }
 
     return 0;
